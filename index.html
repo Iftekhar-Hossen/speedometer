@@ -39,7 +39,7 @@
             maximumAge: 0
         };
         navigator.geolocation.watchPosition((location) => {
-            document.querySelector("#speed").innerHTML = (location.coords.speed ? location.coords.speed : 0)
+            document.querySelector("#speed").innerHTML = (location.coords.speed ?((location.coords.speed * 60)*60)/1000 : 0)
         }, (error) => {
             console.log("error",error)
         }, {enableHighAccuracy: true})
