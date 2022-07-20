@@ -40,7 +40,11 @@ font-family: sans-serif ;
             maximumAge: 0
         };
         navigator.geolocation.watchPosition((location) => {
-            document.querySelector("#speed").innerHTML = (location.coords.speed ? Math.round(((location.coords.speed * 60)*60)/1000) + "km/h" : 0)
+if(location.coords.speed){
+            document.querySelector("#speed").innerHTML =  Math.round(((location.coords.speed * 60)*60)/1000) + " km/h" 
+else{
+document.querySelector("#speed").innerHTML = "0 km/h"
+}
         }, (error) => {
 document.querySelector("#speed").innerHTML =error.message
             console.log("error",error.message)
