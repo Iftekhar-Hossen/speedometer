@@ -42,7 +42,7 @@ font-family: sans-serif ;
         navigator.geolocation.watchPosition((location) => {
 if(location.coords.speed){
             document.querySelector("#speed").innerHTML =  Math.round(((location.coords.speed * 60)*60)/1000) + " km/h" 
-else{
+}else{
 document.querySelector("#speed").innerHTML = "0 km/h"
 }
         }, (error) => {
